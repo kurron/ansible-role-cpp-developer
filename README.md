@@ -11,7 +11,8 @@ TODO
 Role Variables
 --------------
 
-TODO
+* cpp_clion_install: true
+* cpp_clion_version: 2016.2.3
 
 Dependencies
 ------------
@@ -24,7 +25,7 @@ Example Playbook
 ```
 - hosts: servers
   roles:
-      - { role: kurron.cpp-developer, python_pycharm_version: 2016.2.3 }
+      - { role: kurron.cpp-developer, cpp_clion_version: 2016.2.3 }
 ```
 
 License
