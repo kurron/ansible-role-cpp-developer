@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Installation of tools than any self-respecting Python developer loves and needs.
+Installation of tools than any self-respecting C/C++ developer loves and needs.
 
 Requirements
 ------------
@@ -11,8 +11,7 @@ TODO
 Role Variables
 --------------
 
-python_pycharm_install: true
-python_pycharm_version: 2016.2.3
+TODO
 
 Dependencies
 ------------
@@ -25,7 +24,7 @@ Example Playbook
 ```
 - hosts: servers
   roles:
-      - { role: kurron.python-developer, python_pycharm_version: 2016.2.3 }
+      - { role: kurron.cpp-developer, python_pycharm_version: 2016.2.3 }
 ```
 
 License
