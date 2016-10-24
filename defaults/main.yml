@@ -1,6 +1,5 @@
 ---
 cpp_download_directory: Downloads
-cpp_software_directory: Software
 
 cpp_clion_install: true
 cpp_clion_version: 2016.2.3
