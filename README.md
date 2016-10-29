@@ -17,7 +17,7 @@ Role Variables
 Dependencies
 ------------
 
-No dependencies.
+* kurron.jdk
 
 Example Playbook
 ----------------

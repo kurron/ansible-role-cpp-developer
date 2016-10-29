@@ -3,14 +3,14 @@
   become: no
   get_url:
       url: "https://download.jetbrains.com/cpp/CLion-{{cpp_clion_version}}.tar.gz"
-      dest: "{{ansible_user_dir}}/{{cpp_download_directory}}/clion-{{cpp_clion_version}}.tar.gz"
+      dest: "{{ansible_user_dir}}/{{base_download_directory}}/clion-{{cpp_clion_version}}.tar.gz"
       mode: 0444
   when: cpp_clion_install
 
 - name: Uncompress CLion Tarball
   become: no
   unarchive:
-      src: "{{ansible_user_dir}}/{{cpp_download_directory}}/clion-{{cpp_clion_version}}.tar.gz"
+      src: "{{ansible_user_dir}}/{{base_download_directory}}/clion-{{cpp_clion_version}}.tar.gz"
       dest: "{{ansible_user_dir}}/{{base_software_directory}}"
       copy: no
       owner: "{{ansible_user_uid}}"
@@ -38,4 +38,21 @@
       group: "{{ansible_user_gid}}"
       mode: 0555
   when: cpp_clion_install
+
+- name: Set Global Environment To Have CLion Use Shared JDK
+  become: yes
+  template:
+      src: "templates/clion-environment.sh.j2"
+      dest: "/etc/profile.d/clion-environment.sh"
+      owner: "{{ansible_user_uid}}"
+      group: "{{ansible_user_gid}}"
+      mode: 0555
+  when: cpp_clion_share_jdk
+
+- name: Remove CLion's Embedded JDK
+  become: no
+  file:
+      path: "{{ansible_user_dir}}/{{base_software_directory}}/clion/jre"
+      state: absent
+  when: cpp_clion_share_jdk
 

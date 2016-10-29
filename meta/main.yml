@@ -35,6 +35,7 @@ galaxy_info:
       - C
       - C++
       - JetBrains
+      - CLion
 
 dependencies:
     - { role: kurron.jdk }
