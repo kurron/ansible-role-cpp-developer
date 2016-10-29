@@ -3,7 +3,7 @@ Version=1.0
 Type=Application
 Name=CLion
 Comment=C/C++ IDE
-Exec={{ansible_user_dir}}/Software/clion/bin/clion.sh
+Exec=env CL_JDK={{jdk_global_jdk_directory}} {{ansible_user_dir}}/Software/clion/bin/clion.sh
 Icon={{ansible_user_dir}}/Software/clion/bin/clion.svg
 Path=
 Terminal=false
