@@ -1,5 +1,4 @@
 ---
 cpp_clion_install: true
-cpp_clion_version: 2017.1.1
+cpp_clion_version: 2017.3
 cpp_clion_share_jdk: true
-
